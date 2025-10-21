@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSearch } from '../components/SearchProvider';
+import { cardStyle, buttonStyle } from '../styles/CardStyle';
 
 function Plays() {
   const location = useLocation();
@@ -22,28 +23,27 @@ function Plays() {
   );
 
   return (
-    <div>
-      <h1>Plays</h1>
-      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+    <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto', paddingTop: '70px' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#333', marginBottom: '20px' }}>Plays</h1>
+      <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
         {filteredShows.map((show, index) => (
-          <div key={index} style={{ border: '1px solid #ddd', padding: '10px', width: '200px' }}>
-            <h3>{show.title}</h3>
-            <p>{show.description}</p>
-            <Link to={`/book/plays/${show.title.replace(/\s+/g, '')}`}>
-              <button
-                style={{
-                  padding: '5px 10px',
-                  backgroundColor: '#ff0000',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                }}
-              >
-                Book Now
-              </button>
-            </Link>
-          </div>
+          <Link
+            key={index}
+            to={`/book/plays/${show.title.replace(/\s+/g, '')}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div style={cardStyle}>
+              <div style={{ flexGrow: 1, overflow: 'hidden' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#333', marginBottom: '10px' }}>
+                  {show.title}
+                </h3>
+                <p style={{ fontSize: '16px', color: '#666', marginBottom: '15px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {show.description}
+                </p>
+              </div>
+              <button style={buttonStyle}>Book Now</button>
+            </div>
+          </Link>
         ))}
       </div>
       {filteredShows.length === 0 && currentSearchTerm && (

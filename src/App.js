@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="container" style={{ padding: '20px' }}>
+      <div className="container" style={{ paddingTop: '70px', padding: '20px' }}> {/* Added paddingTop to offset header height */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />

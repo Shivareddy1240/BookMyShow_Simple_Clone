@@ -23,8 +23,24 @@ function Header() {
   };
 
   return (
-    <header style={{ backgroundColor: '#ff0000', color: 'white', padding: '10px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
+    <header style={{
+      backgroundColor: '#ff0000',
+      color: 'white',
+      padding: '10px',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 1000, // Ensures header stays above content
+      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Optional: subtle shadow
+    }}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        maxWidth: '1200px',
+        margin: '0 auto',
+      }}>
         <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
           <h2>BookMyShow</h2>
         </Link>
