@@ -262,21 +262,21 @@ function Booking() {
         <div>
           <p style={{ color: '#333', marginBottom: '10px' }}>Selected Seats: {selectedSeats.length > 0 ? selectedSeats.join(', ') : 'None'} | Price: ₹{calculateTotalPrice()}</p>
           <button
-            onClick={() => {
-              alert('Booking confirmed!');
-              navigate(`/confirm/${category}/${show}`);
-            }}
-            style={{
-              padding: '10px 20px',
-              backgroundColor: '#ff0000',
-              color: 'white',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-            }}
-          >
-            Confirm Booking
-          </button>
+  onClick={() => {
+    alert('Proceeding to payment...');
+    navigate(`/pay/${category}/${show}`);
+  }}
+  style={{
+    padding: '10px 20px',
+    backgroundColor: '#ff0000',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  }}
+>
+  Proceed to Payment
+</button>
         </div>
       )}
     </div>

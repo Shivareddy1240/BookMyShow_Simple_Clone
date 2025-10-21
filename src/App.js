@@ -26,6 +26,7 @@ function App() {
           <Route path="/confirm/:category/:show" element={<Confirmation />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/pay/:category/:show" element={<Payment />} />
+          <Route path="/pay/:category/:show" element={<Payment />} />
         </Routes>
       </div>
     </div>
